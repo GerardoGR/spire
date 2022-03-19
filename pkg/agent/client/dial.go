@@ -70,6 +70,8 @@ func DialServer(ctx context.Context, config DialServerConfig) (*grpc.ClientConn,
 		grpc.WithBlock(),
 		grpc.WithReturnConnectionError(),
 		grpc.WithTransportCredentials(credentials.NewTLS(tlsConfig)),
+		// TODO: Finish this
+		grpc.WithAuthority("sni-value"),
 	)
 	switch {
 	case err == nil:
